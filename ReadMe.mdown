@@ -5,8 +5,7 @@
 
 For more information, or if you don't really like reading, refer to the video attached. Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
 
-##Note
-:
+##Note:
 	When running for the first time, credentials and permissions are required to be obtained.
 	The application will try as much as possible to make this process as smooth as possible, however,
 	some human intervention is still required.
@@ -15,8 +14,7 @@ For more information, or if you don't really like reading, refer to the video at
 
 	After doing so, when running the application again, a webpage will be opened requesting for permission for this application to access your Gmail account. Click allow and close the browser, application will continue execution. 
 
-##Installation Guide
-:
+##Installation Guide:
 
 	 Download the relevant Google API using the following command:
 	 	'pip install --upgrade google-api-python-client'
@@ -122,6 +120,5 @@ The GmailEncrypt.py file contains the class EncryptionWorker()
 		~~~
 
 
-###Known Bugs
-
-: The Encryption does not seem to work on files with adobe PDF files attached.
+###Known Bugs:
+The Encryption does not seem to work on files with adobe PDF files attached.
