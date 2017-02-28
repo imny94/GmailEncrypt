@@ -1,7 +1,13 @@
 #This is a ReadMe file for the Gmail Email Encryption.
 
-####To run Encryption of the file, type ~~~python EncryptEmail.py~~~
-####To run Decryption of the file, type ~~~python DecryptEmail.py~~~
+####To run Encryption of the file, type 
+~~~
+python EncryptEmail.py
+~~~
+####To run Decryption of the file, type 
+~~~
+python DecryptEmail.py
+~~~
 
 For more information, or if you don't really like reading, refer to the video attached. Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
 
@@ -17,10 +23,14 @@ After doing so, when running the application again, a webpage will be opened req
 ##Installation Guide:
 
  Download the relevant Google API using the following command:
-	~~~pip install --upgrade google-api-python-client~~~
+~~~
+	pip install --upgrade google-api-python-client
+~~~
 
 Download Selenium required for webscrapping using the following command:
-	~~~pip install selenium~~~
+~~~
+	pip install selenium
+~~~
 
 As webscrapper is currently based on firefox, install firefox.
 
@@ -71,6 +81,7 @@ If it does fail, human intervention is required.
 As of the current version, assuming firefox and geckodriver is properly installed, human intervention is still required in the last step. (Start from Step 5)
 
 Steps to follow if scrapper fails, or you have reached the point where browser shows option to select Application Type (Scraper does this steps as well):
+	
 	1. Go to https://console.developers.google.com/start/api?id=gmail to create or select a project in the Google Developers Console and automatically turn on the API. Click Continue, then Go to credentials.
 
 	2. On the Add credentials to your project page, click the Cancel button.
@@ -115,10 +126,10 @@ This class takes in 2 arguments on initialisation, **username** and **password**
 The entry point to this class is via **runEncryption()** or **runDecryption()**
 	I.e. to start the scrapper, first initialise the class, then call runEncryption() or runDecryption() method.
 	E.g.
-	~~~
+~~~
 		test = EncryptionWorker(username,password)
 		test.runEncryption(startDate,endDate,optionalEncryptionPassword) or test.runDecryption(startDate,endDate,optionalEncryptionPassword)
-	~~~
+~~~
 
 
 ###Known Bugs:
