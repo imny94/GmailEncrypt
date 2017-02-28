@@ -6,118 +6,118 @@
 For more information, or if you don't really like reading, refer to the video attached. Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
 
 ##Note:
-	When running for the first time, credentials and permissions are required to be obtained.
-	The application will try as much as possible to make this process as smooth as possible, however,
-	some human intervention is still required.
-	When first running the file, the application will attempt to login and create the relevant credentials required.
-	When browser stops becoming interactive, refer to section below on IMPORTANT THINGS TO NOTE REGARDING WEBSCRAPPER, and follow the instructions as described there.
+When running for the first time, credentials and permissions are required to be obtained.
+The application will try as much as possible to make this process as smooth as possible, however,
+some human intervention is still required.
+When first running the file, the application will attempt to login and create the relevant credentials required.
+When browser stops becoming interactive, refer to section below on IMPORTANT THINGS TO NOTE REGARDING WEBSCRAPPER, and follow the instructions as described there.
 
-	After doing so, when running the application again, a webpage will be opened requesting for permission for this application to access your Gmail account. Click allow and close the browser, application will continue execution. 
+After doing so, when running the application again, a webpage will be opened requesting for permission for this application to access your Gmail account. Click allow and close the browser, application will continue execution. 
 
 ##Installation Guide:
 
-	 Download the relevant Google API using the following command:
-	 	'pip install --upgrade google-api-python-client'
+ Download the relevant Google API using the following command:
+	'pip install --upgrade google-api-python-client'
 
- 	Download Selenium required for webscrapping using the following command:
- 		'pip install selenium'
+Download Selenium required for webscrapping using the following command:
+	'pip install selenium'
 
-	As webscrapper is currently based on firefox, install firefox.
+As webscrapper is currently based on firefox, install firefox.
 
-	Install the latest version of geckodriver from this link: https://github.com/mozilla/geckodriver/releases or [link](https://github.com/mozilla/geckodriver/releases "Click here") and ensure geckodriver is in a location accessible by PATH Variable.
+Install the latest version of geckodriver from this link: https://github.com/mozilla/geckodriver/releases or [link](https://github.com/mozilla/geckodriver/releases "Click here") and ensure geckodriver is in a location accessible by PATH Variable.
 
-	geckodriver is required to run the webscraper in firefox.
+geckodriver is required to run the webscraper in firefox.
 
 
 The application is split into 2 main parts, the GmailEncrypt.py File and the CredentialsGetter.py File
 
 The CredentialsGetter.py file contains the class CredentialGetter()
 
-	This Class contains the webscrapper required to fetch the relevant authentication details to 
-	authenticate with Google. The main purpose of this class is to create the relevant credentials 
-	on Google for the project, and then to download the required JSON file.
+This Class contains the webscrapper required to fetch the relevant authentication details to 
+authenticate with Google. The main purpose of this class is to create the relevant credentials 
+on Google for the project, and then to download the required JSON file.
 
-	The rationale behind the existence of webscrapper is because no API can be found to progratically download the required
-	credentials JSON file for authentication.  
+The rationale behind the existence of webscrapper is because no API can be found to progratically download the required
+credentials JSON file for authentication.  
 
-	To run the class in the right order, execute start() method.
+To run the class in the right order, execute start() method.
 
-	This class takes in 2 arguments on initialisation, username and password
+This class takes in 2 arguments on initialisation, username and password
 
-	Note: 
-		Development of this webscrapper is done in selenium, and would require selenium to be installed.
-		Install selenium from the command line using command : "pip install selenium" on the command line with pip installed. 
-		Development of this class is based on firefox, and would require firefox and geckodriver installed.
-		Install the latest version of geckodriver from this link: https://github.com/mozilla/geckodriver/releases or [link](https://github.com/mozilla/geckodriver/releases "Click here")
-		and ensure geckodriver is in a location accessible by PATH Variable.
+Note: 
+	Development of this webscrapper is done in selenium, and would require selenium to be installed.
+	Install selenium from the command line using command : "pip install selenium" on the command line with pip installed. 
+	Development of this class is based on firefox, and would require firefox and geckodriver installed.
+	Install the latest version of geckodriver from this link: https://github.com/mozilla/geckodriver/releases or [link](https://github.com/mozilla/geckodriver/releases "Click here")
+	and ensure geckodriver is in a location accessible by PATH Variable.
 
-	ARGS:
-		username: Users gmail email address to login into google
-		password: Users gmail email password
+ARGS:
+	username: Users gmail email address to login into google
+	password: Users gmail email password
 
-	The entry point to this class is via start()
-	I.e. to start the scrapper, first initialise the class, then call start() method.
-	E.g.
-	~~~
-		test = CredentialsGetter(username,password)
-		test.start()
-	~~~
+The entry point to this class is via start()
+I.e. to start the scrapper, first initialise the class, then call start() method.
+E.g.
+~~~
+	test = CredentialsGetter(username,password)
+	test.start()
+~~~
 
 ##IMPORTANT THINGS TO NOTE REGARDING WEBSCRAPPER:
-	The Webscrapper was designed to minimise human intervention in obtaining the relevant JSON files required for authentication.
-	It is not 100% full proof. 
-	If it does fail, human intervention is required.
-	As of the current version, assuming firefox and geckodriver is properly installed, human intervention is still required in the last step. (Start from Step 5)
+The Webscrapper was designed to minimise human intervention in obtaining the relevant JSON files required for authentication.
+It is not 100% full proof. 
+If it does fail, human intervention is required.
+As of the current version, assuming firefox and geckodriver is properly installed, human intervention is still required in the last step. (Start from Step 5)
 
-	Steps to follow if scrapper fails, or you have reached the point where browser shows option to select Application Type (Scraper does this steps as well):
-		1. Go to https://console.developers.google.com/start/api?id=gmail to create or select a project in the Google Developers Console and automatically turn on the API. Click Continue, then Go to credentials.
+Steps to follow if scrapper fails, or you have reached the point where browser shows option to select Application Type (Scraper does this steps as well):
+	1. Go to https://console.developers.google.com/start/api?id=gmail to create or select a project in the Google Developers Console and automatically turn on the API. Click Continue, then Go to credentials.
 
-		2. On the Add credentials to your project page, click the Cancel button.
+	2. On the Add credentials to your project page, click the Cancel button.
 
-		3. At the top of the page, select the OAuth consent screen tab. Select an Email address, enter a Product name if not already set, and click the Save button.
-		
-		4. Select the Credentials tab, click the Create credentials button and select OAuth client ID.
-		
-		5. Select the application type Other, enter the name "Gmail API Quickstart", and click the Create button.
-		
-		6. Click OK to dismiss the resulting dialog.
-		
-		7. Click the file_download (Download JSON) button to the right of the client ID.
-		
-		8. Move this file to your working directory and rename it client_id.json. (Make sure to save this file in the same directory as where this application resides, i.e. same location as GmailEncrypt.py File, CredentialsGetter.py File, EncryptEmail.py file and DecryptEmail.py)
+	3. At the top of the page, select the OAuth consent screen tab. Select an Email address, enter a Product name if not already set, and click the Save button.
 
-		9. When complete, and application from command prompt does not proceed further, interrupt execution of application via "CTRL+C" keystroke, and re-run application
+	4. Select the Credentials tab, click the Create credentials button and select OAuth client ID.
+
+	5. Select the application type Other, enter the name "Gmail API Quickstart", and click the Create button.
+
+	6. Click OK to dismiss the resulting dialog.
+
+	7. Click the file_download (Download JSON) button to the right of the client ID.
+
+	8. Move this file to your working directory and rename it client_id.json. (Make sure to save this file in the same directory as where this application resides, i.e. same location as GmailEncrypt.py File, CredentialsGetter.py File, EncryptEmail.py file and DecryptEmail.py)
+
+	9. When complete, and application from command prompt does not proceed further, interrupt execution of application via "CTRL+C" keystroke, and re-run application
 
 
 
 The GmailEncrypt.py file contains the class EncryptionWorker()
 
-	This Class is used to either run encryption or decryption of the given data from Gmail.
-	The main purpose of this class is to encapsulate the relevant methods required for the
-	encryption and decryption process, allowing easy encryption or decryption of the desired
-	data. 
+This Class is used to either run encryption or decryption of the given data from Gmail.
+The main purpose of this class is to encapsulate the relevant methods required for the
+encryption and decryption process, allowing easy encryption or decryption of the desired
+data. 
 
-	To Toggle between Encryption or Decryption, choose between the methods:
-		runEncryption(startDate,endDate, optionalPassword)
-		runDecryption(startDate,endDate, optionalPassword)
+To Toggle between Encryption or Decryption, choose between the methods:
+	runEncryption(startDate,endDate, optionalPassword)
+	runDecryption(startDate,endDate, optionalPassword)
 
-	This class takes in 2 arguments on initialisation, username and password
+This class takes in 2 arguments on initialisation, username and password
 
-	Note: 
-		This encryption model only works for small scale encryption of data, if the data given
-		for encryption is too large, the application will crash. 
+Note: 
+	This encryption model only works for small scale encryption of data, if the data given
+	for encryption is too large, the application will crash. 
 
-	ARGS:
-		username: Users gmail email address to login into google
-		password: Users gmail email password
+ARGS:
+	username: Users gmail email address to login into google
+	password: Users gmail email password
 
-	The entry point to this class is via runEncryption() or runDecryption()
-		I.e. to start the scrapper, first initialise the class, then call runEncryption() or runDecryption() method.
-		E.g.
-		~~~
-			test = EncryptionWorker(username,password)
-			test.runEncryption(startDate,endDate,optionalEncryptionPassword) or test.runDecryption(startDate,endDate,optionalEncryptionPassword)
-		~~~
+The entry point to this class is via runEncryption() or runDecryption()
+	I.e. to start the scrapper, first initialise the class, then call runEncryption() or runDecryption() method.
+	E.g.
+	~~~
+		test = EncryptionWorker(username,password)
+		test.runEncryption(startDate,endDate,optionalEncryptionPassword) or test.runDecryption(startDate,endDate,optionalEncryptionPassword)
+	~~~
 
 
 ###Known Bugs:
