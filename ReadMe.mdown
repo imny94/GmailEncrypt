@@ -1,7 +1,7 @@
 #This is a ReadMe file for the Gmail Email Encryption.
 
-##To run Encryption of the file, type 'python EncryptEmail.py'
-##To run Decryption of the file, type 'python DecryptEmail.py'
+####To run Encryption of the file, type ~~~python EncryptEmail.py~~~
+####To run Decryption of the file, type ~~~python DecryptEmail.py~~~
 
 For more information, or if you don't really like reading, refer to the video attached. Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
 
@@ -17,10 +17,10 @@ After doing so, when running the application again, a webpage will be opened req
 ##Installation Guide:
 
  Download the relevant Google API using the following command:
-	'pip install --upgrade google-api-python-client'
+	~~~pip install --upgrade google-api-python-client~~~
 
 Download Selenium required for webscrapping using the following command:
-	'pip install selenium'
+	~~~pip install selenium~~~
 
 As webscrapper is currently based on firefox, install firefox.
 
@@ -28,6 +28,7 @@ Install the latest version of geckodriver from this link: https://github.com/moz
 
 geckodriver is required to run the webscraper in firefox.
 
+##Description of Modules:
 
 The application is split into 2 main parts, the GmailEncrypt.py File and the CredentialsGetter.py File
 
@@ -40,18 +41,18 @@ on Google for the project, and then to download the required JSON file.
 The rationale behind the existence of webscrapper is because no API can be found to progratically download the required
 credentials JSON file for authentication.  
 
-To run the class in the right order, execute start() method.
+To run the class in the right order, execute **start()** method.
 
-This class takes in 2 arguments on initialisation, username and password
+This class takes in 2 arguments on initialisation, **username** and **password**
 
-Note: 
+###Note: 
 	Development of this webscrapper is done in selenium, and would require selenium to be installed.
 	Install selenium from the command line using command : "pip install selenium" on the command line with pip installed. 
 	Development of this class is based on firefox, and would require firefox and geckodriver installed.
 	Install the latest version of geckodriver from this link: https://github.com/mozilla/geckodriver/releases or [link](https://github.com/mozilla/geckodriver/releases "Click here")
 	and ensure geckodriver is in a location accessible by PATH Variable.
 
-ARGS:
+###ARGS:
 	username: Users gmail email address to login into google
 	password: Users gmail email password
 
@@ -101,17 +102,17 @@ To Toggle between Encryption or Decryption, choose between the methods:
 	runEncryption(startDate,endDate, optionalPassword)
 	runDecryption(startDate,endDate, optionalPassword)
 
-This class takes in 2 arguments on initialisation, username and password
+This class takes in 2 arguments on initialisation, **username** and **password**
 
-Note: 
+###Note: 
 	This encryption model only works for small scale encryption of data, if the data given
 	for encryption is too large, the application will crash. 
 
-ARGS:
+###ARGS:
 	username: Users gmail email address to login into google
 	password: Users gmail email password
 
-The entry point to this class is via runEncryption() or runDecryption()
+The entry point to this class is via **runEncryption()** or **runDecryption()**
 	I.e. to start the scrapper, first initialise the class, then call runEncryption() or runDecryption() method.
 	E.g.
 	~~~
