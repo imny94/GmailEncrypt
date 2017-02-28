@@ -9,7 +9,7 @@ python EncryptEmail.py
 python DecryptEmail.py
 ~~~
 
-For more information, or if you don't really like reading, refer to the video attached. Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
+For more information, or if you don't really like reading, refer to the video attached (Not available on GitHub). Video has no audio though, so do play some background music by yourself if you need to. :) The video is basically meant as a guide to show how the flow of the application works. Do refer back to this ReadMe when encountering any difficulties, especially when obtaining credentials from browser. 
 
 ##Note:
 When running for the first time, credentials and permissions are required to be obtained.
